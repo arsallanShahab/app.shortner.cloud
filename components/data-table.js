@@ -73,7 +73,7 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
   };
 
   return (
-    <div className="gap-5 flex flex-col rounded-lg bg-secondary dark:bg-primary dark:text-secondary p-5">
+    <div className="gap-5 flex flex-col rounded-lg bg-secondary">
       {data.map((item, i) => (
         <div
           key={i}
@@ -95,7 +95,7 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
               </p>
             </div>
             <div className="flex items-center flex-wrap justify-start gap-2 rounded-3xl">
-              <p className="px-3 pr-1  py-2 bg-primary dark:bg-black/10 rounded-2xl text-xs">
+              <p className="px-3 pr-1  py-2 bg-primary rounded-2xl text-xs">
                 <span className="font-semibold rounded-2xl text-secondary">
                   created:
                 </span>{" "}
@@ -104,7 +104,7 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
                   <TimeAgo timestamp={new Date(item.createdAt).getTime()} />
                 </span>
               </p>
-              <p className="px-3 pr-1  py-2 bg-primary dark:bg-black/10 rounded-2xl text-xs">
+              <p className="px-3 pr-1  py-2 bg-primary rounded-2xl text-xs">
                 {/* time and date */}
                 <span className="font-semibold rounded-2xl text-secondary">
                   last clicked:
@@ -119,10 +119,10 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
                   )}
                 </span>
               </p>
-              <p className="px-3 py-2 bg-[#ecf976] text-[#151802] dark:bg-black/10 font-semibold rounded-2xl text-xs">
+              <p className="px-3 py-2 bg-[#ecf976] text-[#151802] font-semibold rounded-2xl text-xs">
                 {item.isActive ? "Active" : "Inactive"}
               </p>
-              <p className="px-3 py-2 bg-[#ecf976] text-[#151802] dark:bg-black/10 font-semibold rounded-2xl text-xs">
+              <p className="px-3 py-2 bg-[#ecf976] text-[#151802] font-semibold rounded-2xl text-xs">
                 {item.clicks} {item.clicks > 1 ? "clicks" : "click"}
               </p>
             </div>
@@ -133,7 +133,7 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
               <DialogTrigger className="button button__primary ring-transparent">
                 <QrCode className="inline-block w-5 h-5 mr-1 align-middle" />
               </DialogTrigger>
-              <DialogContent className="bg-[#f9ffc5] w-auto shadow-none ring-[#151802] p-5 dark:bg-secondary border-none ring-1 ring-opacity-25">
+              <DialogContent className="bg-[#f9ffc5] w-auto shadow-none ring-[#151802] p-5 border-none ring-1 ring-opacity-25">
                 <DialogHeader>
                   <DialogTitle className="text-center">
                     <span className="font-semibold text-sm">
@@ -168,12 +168,6 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
             >
               Copy
             </button>
-            {/* <Button
-              variant="outline"
-              className="button hover:bg-primary hover:text-secondary dark:bg-secondary dark:text-primary dark:border-none dark:hover:bg-black/80"
-            >
-              Edit
-            </Button> */}
             <button
               onClick={() => deleteUrl(item._id)}
               className="button button__primary ring-transparent"

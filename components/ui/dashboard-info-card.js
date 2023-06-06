@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 const DashboardInfo = ({ heading, value = 0, stats = 0, icon, loading }) => {
   if (loading) {
     return (
-      <div className="rounded-lg bg-secondary-lighter dark:bg-primary ring-secondary hover:ring-secondary ring-offset-0 hover:ring-offset-2 ring-0 hover:ring-2 duration-150">
+      <div className="rounded-lg bg-secondary-lighter ring-secondary hover:ring-secondary ring-offset-0 hover:ring-offset-2 ring-0 hover:ring-2 duration-150">
         <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
           <h3 className="tracking-tight text-sm font-medium">{heading}</h3>
           {icon}
@@ -20,7 +20,6 @@ const DashboardInfo = ({ heading, value = 0, stats = 0, icon, loading }) => {
   }
 
   return (
-    // <div className="rounded-lg bg-secondary dark:bg-primary dark:text-secondary ring-secondary hover:ring-secondary ring-offset-0 hover:ring-offset-2 ring-0 hover:ring-2 duration-150">
     <div className={twMerge("button__primary rounded-lg duration-150")}>
       <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
         <h3 className="tracking-tight text-sm font-medium">{heading}</h3>

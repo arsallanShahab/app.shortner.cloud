@@ -29,25 +29,6 @@
   --background-color-lighter: rgba(255, 255, 255, 0.7);
   --background-color-light: rgba(255, 255, 255, 0.9);
 }
-/* :root[data-theme="dark"] {
-  --text-color: #ecf976;
-  --background-color: #101918;
-  --primary-button-color: #f5fccf;
-  --secondary-button-color: #5337f1;
-  --accent-color: #5337f1;
-  --background-color-lighter: #4685ff;
-  --background-color-light: #cde01e;
-} */
-
-/* :root[data-theme="dark"] {
-  --text-color: #fff;
-  --background-color: #000000;
-  --primary-button-color: #ecf976;
-  --secondary-button-color: #151802;
-  --accent-color: #ecf976;
-  --background-color-lighter: rgba(255, 255, 255, 0.7);
-  --background-color-light: rgba(255, 255, 255, 0.9);
-} */
 
 body {
   background-color: var(--background-color);
@@ -58,10 +39,6 @@ body {
 
 .color-effect {
   @apply bg-clip-text text-transparent bg-gradient-to-l from-accent to-primary-button;
-}
-
-[data-theme="dark"] .color-effect {
-  @apply bg-clip-text text-transparent bg-gradient-to-l from-secondary to-primary-button;
 }
 
 /* .button {
@@ -76,16 +53,8 @@ body {
   @apply bg-[#ecf976] ring-[#151802] hover:bg-[#e6f560] active:scale-[0.99];
 }
 
-[data-theme="dark"] .button__primary {
-  @apply bg-[#151802] ring-[#ecf976] hover:bg-[#191d02] active:scale-[0.99];
-}
-
 .input__primary {
   @apply text-sm font-medium px-5 py-3 rounded-lg duration-150 bg-[#151802] hover:bg-[#191d02] text-[#ecf976] border-none outline-none placeholder:text-[#ecf976] disabled:hover:bg-[#151802] disabled:text-[#ecf976];
-}
-
-[data-theme="dark"] .input__primary {
-  @apply text-sm font-medium px-5 py-3 rounded-lg duration-150 bg-[#ecf976] hover:bg-[#e6f560] text-[#151802] border-none outline-none placeholder:text-[#151802];
 }
 
 .input-group {

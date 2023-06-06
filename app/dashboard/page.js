@@ -230,7 +230,7 @@ function Dashboard() {
                   Create Link
                 </span>
               </DialogTrigger>
-              <DialogContent className="bg-[#f9ffc5] shadow-none ring-[#151802] p-5 dark:bg-secondary border-none ring-1 ring-opacity-25">
+              <DialogContent className="bg-[#f9ffc5] shadow-none ring-[#151802] p-5">
                 <DialogHeader>
                   <DialogTitle>Enter the url</DialogTitle>
                   <DialogDescription className="text-muted">

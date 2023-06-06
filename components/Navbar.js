@@ -1,16 +1,12 @@
 "use client";
-import { useGlobalContext } from "@/context/GlobalContext";
 import { Loader2, MoonIcon, Sun } from "lucide-react";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
-// import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
-// import ProfileDropdown from "./ProfileDropdown";
 
 const Navbar = () => {
-  // const { isDarkTheme, setIsDarkTheme } = useGlobalContext();
   const [open, setOpen] = React.useState(false);
   const { data: session, status } = useSession();
   const dropdown = React.useRef(null);
@@ -42,17 +38,6 @@ const Navbar = () => {
     setOpen(false);
   }, [router.pathname]);
 
-  // const handleTheme = () => {
-  //   if (isDarkTheme) {
-  //     setIsDarkTheme(false);
-  //     localStorage.setItem("theme", "light");
-  //     document.documentElement.setAttribute("data-theme", "light");
-  //   } else {
-  //     setIsDarkTheme(true);
-  //     localStorage.setItem("theme", "dark");
-  //     document.documentElement.setAttribute("data-theme", "dark");
-  //   }
-  // };
   return (
     <div className={"flex justify-between px-10 max-w-full xl:mx-auto py-5"}>
       <div>
@@ -64,14 +49,6 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex items-center gap-6">
-        {/* <button onClick={handleTheme} className="bg-transparent">
-          {isDarkTheme ? (
-            <Sun className="h-5 w-5" />
-          ) : (
-            <MoonIcon className="h-5 w-5" />
-          )}
-        </button> */}
-
         {session ? (
           <div className="relative">
             <button
