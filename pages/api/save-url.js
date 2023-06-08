@@ -24,6 +24,7 @@ export default async function handler(req, res) {
 
   // check if url is valid or not if not return 400
   const checkURL = isValidURL(url);
+  console.log(checkURL, url.length);
   if (!checkURL || url.length > 2000 || url.length < 5 || !userId) {
     return res.status(400).json({
       ok: false,

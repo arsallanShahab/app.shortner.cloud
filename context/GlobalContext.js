@@ -2,12 +2,12 @@
 
 import { createContext, useContext } from "react";
 
-const globalContext = createContext();
+const Context = createContext();
 
 const GlobalContextProvider = ({ children }) => {
-  return <globalContext.Provider>{children}</globalContext.Provider>;
+  return <Context.Provider value={{}}>{children}</Context.Provider>;
 };
 
-const useGlobalContext = () => useContext(globalContext);
+const useGlobalContext = () => useContext(Context);
 
 export { GlobalContextProvider, useGlobalContext };

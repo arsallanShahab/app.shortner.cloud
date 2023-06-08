@@ -5,9 +5,9 @@ import { SessionProvider } from "next-auth/react";
 
 const Provider = ({ children, session }) => {
   return (
-    <GlobalContextProvider>
-      <SessionProvider session={session}>{children}</SessionProvider>
-    </GlobalContextProvider>
+    <SessionProvider session={session}>
+      <GlobalContextProvider>{children}</GlobalContextProvider>
+    </SessionProvider>
   );
 };
 

@@ -28,7 +28,9 @@ export default function Home() {
       >
         <div className="flex flex-col items-center justify-center h-full">
           <div className={cn("mb-4")}>
-            <h1 className={cn("text-8xl font-bold tracking-tighter")}>
+            <h1
+              className={cn("text-6xl sm:text-8xl font-bold tracking-tighter")}
+            >
               <span className="color-effect">Shorten</span> your links
             </h1>
           </div>
@@ -38,7 +40,7 @@ export default function Home() {
               links.
             </p>
           </div>
-          <div className="flex flex-col gap-4 md:flex-row w-full items-center justify-center">
+          <div className="flex flex-row sm:flex-col gap-4 md:flex-row w-full items-center justify-center">
             <div className="flex-1 w-full">
               <input
                 type="text"

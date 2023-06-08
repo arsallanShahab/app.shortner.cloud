@@ -1,5 +1,6 @@
 // pages/dashboard.js
 "use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -157,6 +158,7 @@ function Dashboard() {
 
     // save the url to the database and show a toast
     setUrl({ ...url, loading: true });
+    console.log(url.url, url.name, session.user.id);
     const res = await fetch("/api/save-url", {
       body: JSON.stringify({
         url: url.url,
@@ -212,19 +214,19 @@ function Dashboard() {
   };
 
   return (
-    <div className="px-10 py-5">
+    <div className="px-5 sm:px-10 py-5">
       <h1 className="mb-5 text-3xl font-bold">Dashboard</h1>
       <div>
         <Tabs defaultValue="overview">
-          <div className="flex justify-between">
-            <TabsList className="grid grid-cols-2 w-[400px] mb-2.5">
+          <div className="flex flex-col sm:flex-row gap-2 justify-between">
+            <TabsList className="grid grid-cols-2 w-full sm:w-[400px] mb-2.5">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               {/* <TabsTrigger value="analytics">Analytics</TabsTrigger> */}
               <TabsTrigger value="settings">settings</TabsTrigger>
             </TabsList>
 
             <Dialog>
-              <DialogTrigger>
+              <DialogTrigger className="flex flex-row w-full justify-end mb-4">
                 <span className="button button__primary">
                   <PlusCircle className="w-4 h-4 mr-0.5 align-middle inline-block" />{" "}
                   Create Link
@@ -279,8 +281,8 @@ function Dashboard() {
             </Dialog>
           </div>
           <TabsContent value="overview">
-            <Card className="border-none shadow-none bg-secondary-light p-5">
-              <div className="grid grid-cols-4 gap-4 items-center mb-4">
+            <Card className="border-none shadow-none rounded-2xl bg-secondary-light p-2.5 sm:p-5">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 items-center mb-4">
                 <DashboardInfo
                   heading="Total Links"
                   value={userUrls.totalURLs}

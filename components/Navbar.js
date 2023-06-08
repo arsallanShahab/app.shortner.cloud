@@ -39,7 +39,11 @@ const Navbar = () => {
   }, [router.pathname]);
 
   return (
-    <div className={"flex justify-between px-10 max-w-full xl:mx-auto py-5"}>
+    <div
+      className={
+        "flex justify-between items-center px-10 max-w-full xl:mx-auto py-5"
+      }
+    >
       <div>
         <Link
           href={"/"}

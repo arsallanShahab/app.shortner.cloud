@@ -73,14 +73,14 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
   };
 
   return (
-    <div className="gap-5 flex flex-col rounded-lg bg-secondary">
+    <div className="flex flex-col gap-5 rounded-xl sm:rounded-lg bg-secondary p-2.5 sm:p-5">
       {data.map((item, i) => (
         <div
           key={i}
-          className="flex items-center bg-secondary-light flex-wrap p-5 rounded-xl"
+          className="w-full flex items-center bg-secondary-light gap-5 flex-wrap p-5 rounded-xl"
         >
-          <div className="flex flex-col items-start gap-3">
-            <div className="space-y-1">
+          <div className="flex flex-col items-start gap-3 w-full">
+            <div className="space-y-1 w-full">
               <Link
                 target="_blank"
                 href={`https://shtr.vercel.app/${item.nanoId}`}
@@ -90,7 +90,7 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
                   ? `https://shtr.vercel.app/${item.nanoId} (${item.name})`
                   : `https://shtr.vercel.app/${item.nanoId}`}
               </Link>
-              <p className="text-sm opacity-50 max-w-md break-words">
+              <p className="w-full text-sm opacity-50 max-w-md break-words">
                 {item.url}
               </p>
             </div>
@@ -128,7 +128,7 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
             </div>
           </div>
 
-          <div className="ml-auto flex gap-3">
+          <div className="sm:ml-auto justify-center w-full sm:w-auto flex gap-3">
             <Dialog>
               <DialogTrigger className="button button__primary ring-transparent">
                 <QrCode className="inline-block w-5 h-5 mr-1 align-middle" />
