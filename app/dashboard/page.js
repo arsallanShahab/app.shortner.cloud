@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { DataTable } from "@/components/data-table";
+import TailwindInput from "@/components/ui/custom-input";
 import DashboardInfo from "@/components/ui/dashboard-info-card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -50,6 +51,8 @@ function Dashboard() {
   const [url, setUrl] = useState({
     url: "",
     name: "",
+    expiration: "",
+    linkName: "",
     loading: false,
   });
   const [form, setForm] = useState({
@@ -162,8 +165,10 @@ function Dashboard() {
     const res = await fetch("/api/save-url", {
       body: JSON.stringify({
         url: url.url,
-        userId: session.user.id,
-        name: url.name,
+        user_id: session.user.id,
+        custom_link: url.name,
+        expiration: url.expiration,
+        custom_name: url.linkName,
       }),
       headers: {
         "Content-Type": "application/json",
@@ -173,7 +178,7 @@ function Dashboard() {
     const { ok, message } = await res.json();
     setUrl({ ...url, loading: false });
     if (ok) {
-      setUrl({ ...url, url: "", name: "" });
+      setUrl({ ...url, url: "", name: "", linkName: "", expiration: "" });
       fetchData(session);
       setUserUrls({ ...userUrls, loading: true });
       toast({
@@ -232,7 +237,7 @@ function Dashboard() {
                   Create Link
                 </span>
               </DialogTrigger>
-              <DialogContent className="bg-[#f9ffc5] shadow-none ring-[#151802] p-5">
+              <DialogContent className="bg-[#f9ffc5] shadow-none ring-[#151802] p-5 h-full overflow-y-auto">
                 <DialogHeader>
                   <DialogTitle>Enter the url</DialogTitle>
                   <DialogDescription className="text-muted">
@@ -249,21 +254,39 @@ function Dashboard() {
                       value={url.url}
                       onChange={(e) => setUrl({ ...url, url: e.target.value })}
                       placeholder={`https://example.com`}
-                      className="col-span-3 bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
+                      className="bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
                     />
                   </div>
-                  <div className="flex flex-col justify-center items-start gap-2 bg-[#f4ff8f] p-3 rounded-xl">
-                    <Label htmlFor="name" className="text-left px-2 pt-1">
-                      Enter Custom Name (Optional)
-                    </Label>
-                    <Input
-                      id="name"
-                      value={url.name}
-                      onChange={(e) => setUrl({ ...url, name: e.target.value })}
-                      placeholder={`example`}
-                      className="col-span-3 bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
-                    />
-                  </div>
+                  <TailwindInput
+                    disabledField
+                    label="Custom link (Optional)"
+                    id="URLName"
+                    disabled
+                    value={url.name}
+                    onChange={(e) => setUrl({ ...url, name: e.target.value })}
+                    defaultValue="https://shtr.vercel.app/"
+                    placeholder="Enter a custom name for your link"
+                  />
+                  <TailwindInput
+                    label="Custom name (Optional)"
+                    id="name"
+                    value={url.linkName}
+                    onChange={(e) =>
+                      setUrl({ ...url, linkName: e.target.value })
+                    }
+                    placeholder="Enter a custom name"
+                  />
+                  <TailwindInput
+                    type="date"
+                    label="Link Expiration (Optional)"
+                    id="expiration"
+                    value={url.expiration}
+                    onChange={(e) =>
+                      setUrl({ ...url, expiration: e.target.value })
+                    }
+                    defaultValue={""}
+                    placeholder="Enter a custom name"
+                  />
                   <div className="flex justify-end">
                     <button
                       onClick={saveUrl}

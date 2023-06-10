@@ -38,7 +38,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms"), require("tailwindcss-animate")],
 };
 // :root {
 //   --text-color: #e8cfb1;

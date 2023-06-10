@@ -23,13 +23,15 @@ export default function Home() {
     <>
       <main
         className={cn(
-          "font-sora flex flex-col items-center text-center justify-center pt-40 pb-16 px-10"
+          "font-sora flex flex-col items-center text-center justify-center pt-40 pb-16 px-6 sm:px-10"
         )}
       >
         <div className="flex flex-col items-center justify-center h-full">
           <div className={cn("mb-4")}>
             <h1
-              className={cn("text-6xl sm:text-8xl font-bold tracking-tighter")}
+              className={cn(
+                "text-7xl sm:text-8xl font-bold tracking-tighter break-all sm:break-keep"
+              )}
             >
               <span className="color-effect">Shorten</span> your links
             </h1>

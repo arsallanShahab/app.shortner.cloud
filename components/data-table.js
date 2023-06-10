@@ -77,9 +77,9 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
       {data.map((item, i) => (
         <div
           key={i}
-          className="w-full flex items-center bg-secondary-light gap-5 flex-wrap p-5 rounded-xl"
+          className="w-full flex flex-row items-center bg-secondary-light gap-5 flex-wrap p-5 rounded-xl"
         >
-          <div className="flex flex-col items-start gap-3 w-full">
+          <div className="flex flex-col items-start gap-3 sm:w-auto w-full">
             <div className="space-y-1 w-full">
               <Link
                 target="_blank"
