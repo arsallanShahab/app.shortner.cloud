@@ -49,7 +49,9 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <div className={"flex justify-between items-center px-10 w-full py-5"}>
+    <div
+      className={"flex justify-between items-center px-5 sm:px-10 w-full py-5"}
+    >
       <div className="flex items-center justify-start gap-10">
         <Link
           href={"/"}
@@ -83,12 +85,12 @@ const Navbar = () => {
           })}
         </div>
       </div>
-      <div className="flex items-center gap-3">
-        {session ? (
+      <div className="relative">
+        {status == "authenticated" && (
           <div className="relative">
             <button
               ref={dropdown}
-              className=" text-xs font-medium px-2 py-2 rounded-3xl duration-150 button__primary"
+              className="h-9 flex items-center justify-center text-xs font-medium px-2 rounded-3xl duration-150 button__primary"
               onClick={() => setOpen(!open)}
             >
               {session.user.image ? (
@@ -120,7 +122,7 @@ const Navbar = () => {
               </div>
             </button>
             {open && (
-              <div className="absolute top-12 w-[150px] right-0 sm:w-full bg-secondary-button backdrop-blur-md rounded-xl border border-black/[.025] p-2">
+              <div className="absolute z-50 top-10 w-[150px] right-0 sm:w-full bg-secondary-button backdrop-blur-md rounded-xl border border-black/[.025] p-2">
                 <div className="flex flex-col">
                   <div className="flex sm:hidden flex-col">
                     {[
@@ -137,7 +139,7 @@ const Navbar = () => {
                         <Link
                           key={index}
                           href={item.path}
-                          className={`px-2 py-2 rounded-lg hover:bg-secondary-light border border-transparent hover:border-black/[.025] text-sm font-medium`}
+                          className={`px-2 py-2 text-xs rounded-lg hover:bg-secondary-light border border-transparent hover:border-black/[.025] font-medium`}
                         >
                           {item.name}
                         </Link>
@@ -145,13 +147,13 @@ const Navbar = () => {
                     })}
                   </div>
                   <Link
-                    className="px-2 py-2 rounded-lg hover:bg-secondary-light border border-transparent hover:border-black/[.025] text-sm font-medium"
+                    className="px-2 py-2 rounded-lg hover:bg-secondary-light border border-transparent hover:border-black/[.025] text-xs font-medium"
                     href="/dashboard"
                   >
                     dashboard
                   </Link>
                   <p
-                    className="px-2 py-2 rounded-lg hover:bg-secondary-light text-sm font-medium cursor-pointer"
+                    className="px-2 py-2 rounded-lg hover:bg-secondary-light text-xs font-medium cursor-pointer"
                     onClick={() => {
                       signOut({ redirect: true, callbackUrl: "/user/login" });
                     }}
@@ -162,16 +164,21 @@ const Navbar = () => {
               </div>
             )}
           </div>
-        ) : (
+        )}
+        {status == "unauthenticated" && (
           <Link
             href={status == "unauthenticated" ? "/user/login" : "/dashboard"}
-            className="text-xs font-medium px-2 py-2 rounded-3xl button__primary"
+            className="h-9 flex items-center justify-center text-xs font-medium px-4 rounded-3xl duration-150 button__primary"
           >
-            {status == "loading" ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : status == "unauthenticated" ? (
-              <span className="hidden sm:inline-block px-2">login</span>
-            ) : null}
+            login
+          </Link>
+        )}
+        {status == "loading" && (
+          <Link
+            href={status == "unauthenticated" ? "/user/login" : "/dashboard"}
+            className="h-9 flex items-center justify-center text-xs font-medium px-2 rounded-3xl duration-150 button__primary"
+          >
+            <Loader2 className="h-4 w-4 animate-spin" />
           </Link>
         )}
       </div>

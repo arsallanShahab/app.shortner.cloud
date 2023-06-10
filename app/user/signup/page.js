@@ -84,54 +84,62 @@ const Page = () => {
   };
 
   return (
-    <div className="pl-14 pr-7">
+    <div className="w-full">
       <form
-        className="max-w-sm flex flex-col gap-2 bg-[#f9ffc5] p-3 rounded-xl"
+        className="font-inter w-full sm:max-w-sm flex flex-col gap-2 bg-[#f9ffc5] p-3 rounded-xl"
         onSubmit={handleSubmit}
       >
         <div className="flex flex-row flex-wrap gap-2 w-full">
           <div className="flex flex-col flex-1 justify-center items-start gap-2 bg-[#f4ff8f] p-3 rounded-xl">
-            <Label htmlFor="firstName">First Name</Label>
+            <Label className="text-left px-2 pt-1" htmlFor="firstName">
+              First Name
+            </Label>
             <Input
               type="firstName"
               value={form.firstName}
               onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-              className="bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
+              className="bg-[#ecf976] placeholder:text-[#151802] focus:placeholder:text-[#ecf976] text-[#151802] hover:opacity-95 duration-150 focus:text-[#ecf976] focus:bg-[#151802]"
               id="firstName"
               placeholder="john"
             />
           </div>
           <div className="flex flex-col flex-1 justify-center items-start gap-2 bg-[#f4ff8f] p-3 rounded-xl">
-            <Label htmlFor="lastName">Last Name</Label>
+            <Label className="text-left px-2 pt-1" htmlFor="lastName">
+              Last Name
+            </Label>
             <Input
               type="lastName"
               value={form.lastName}
               onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-              className="bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
+              className="bg-[#ecf976] placeholder:text-[#151802] focus:placeholder:text-[#ecf976] text-[#151802] hover:opacity-95 duration-150 focus:text-[#ecf976] focus:bg-[#151802]"
               id="lastName"
               placeholder="Doe"
             />
           </div>
         </div>
         <div className="flex flex-col justify-center items-start gap-2 bg-[#f4ff8f] p-3 rounded-xl">
-          <Label htmlFor="email">Email</Label>
+          <Label className="text-left px-2 pt-1" htmlFor="email">
+            Email
+          </Label>
           <Input
             type="email"
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
+            className="bg-[#ecf976] placeholder:text-[#151802] focus:placeholder:text-[#ecf976] text-[#151802] hover:opacity-95 duration-150 focus:text-[#ecf976] focus:bg-[#151802]"
             id="email"
             placeholder="abc@gmail.com"
           />
         </div>
         <div className="flex flex-col relative justify-center items-start gap-2 bg-[#f4ff8f] p-3 rounded-xl">
-          <Label htmlFor="password">Password</Label>
+          <Label className="text-left px-2 pt-1" htmlFor="password">
+            Password
+          </Label>
           <Input
             ref={passwordRef}
             type="password"
             value={form.password}
             onChange={(e) => setForm({ ...form, password: e.target.value })}
-            className="relative appearance-none bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
+            className="bg-[#ecf976] placeholder:text-[#151802] focus:placeholder:text-[#ecf976] text-[#151802] hover:opacity-95 duration-150 focus:text-[#ecf976] focus:bg-[#151802]"
             id="password"
             placeholder="password"
           />

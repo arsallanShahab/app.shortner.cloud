@@ -18,7 +18,7 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const { toast } = useToast();
-  const route = useRouter();
+  const router = useRouter();
 
   const signInUser = async (e) => {
     e.preventDefault();
@@ -39,7 +39,7 @@ const Login = () => {
         title: "Success",
         description: "Logged in successfully",
       });
-      route.push("/dashboard");
+      router.push("/dashboard");
       setForm({
         email: "",
         password: "",
@@ -50,8 +50,8 @@ const Login = () => {
     setLoading(false);
   };
   return (
-    <div className="w-full pl-14 pr-7">
-      <form className="max-w-sm flex flex-col gap-2 bg-[#f9ffc5] p-3 rounded-xl">
+    <div className="w-full">
+      <form className="max-w-sm font-inter flex flex-col gap-2 bg-[#f9ffc5] p-3 rounded-xl">
         {/* <div className="input-group bg-[#f9ffc5] p-2 rounded-xl">
           <Label htmlFor="email">Email</Label>
           <Input
@@ -71,8 +71,8 @@ const Login = () => {
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
             id="email"
-            placeholder="abc@gmail.com"
-            className="bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
+            placeholder="enter your email"
+            className="bg-[#ecf976] placeholder:text-[#151802] focus:placeholder:text-[#ecf976] text-[#151802] hover:opacity-95 duration-150 focus:text-[#ecf976] focus:bg-[#151802]"
           />
         </div>
         <div className="flex flex-col justify-center items-start gap-2 bg-[#f4ff8f] p-3 rounded-xl">
@@ -84,8 +84,8 @@ const Login = () => {
             value={form.password}
             onChange={(e) => setForm({ ...form, password: e.target.value })}
             id="password"
-            placeholder="password"
-            className="bg-[#ecf976] placeholder:text-[#151802] text-[#151802] hover:opacity-95 duration-150 focus:bg-[#ecf976]"
+            placeholder="enter your password"
+            className="bg-[#ecf976] placeholder:text-[#151802] focus:placeholder:text-[#ecf976] text-[#151802] hover:opacity-95 duration-150 focus:text-[#ecf976] focus:bg-[#151802]"
           />
         </div>
         {/* <div className="input-group">

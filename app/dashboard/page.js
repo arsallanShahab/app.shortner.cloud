@@ -223,19 +223,17 @@ function Dashboard() {
       <h1 className="mb-5 text-3xl font-bold">Dashboard</h1>
       <div>
         <Tabs defaultValue="overview">
-          <div className="flex flex-col sm:flex-row gap-2 justify-between">
-            <TabsList className="grid grid-cols-2 w-full sm:w-[400px] mb-2.5">
+          <div className="flex flex-col-reverse items-end sm:flex-row gap-5 justify-center sm:justify-between mb-5">
+            <TabsList className="grid grid-cols-2 w-full sm:w-[400px]">
               <TabsTrigger value="overview">Overview</TabsTrigger>
               {/* <TabsTrigger value="analytics">Analytics</TabsTrigger> */}
               <TabsTrigger value="settings">settings</TabsTrigger>
             </TabsList>
 
             <Dialog>
-              <DialogTrigger className="flex flex-row w-full justify-end mb-4">
-                <span className="button button__primary">
-                  <PlusCircle className="w-4 h-4 mr-0.5 align-middle inline-block" />{" "}
-                  Create Link
-                </span>
+              <DialogTrigger className="relative button button__primary">
+                <PlusCircle className="w-4 h-4 mr-0.5 align-middle inline-block" />{" "}
+                Create Link
               </DialogTrigger>
               <DialogContent className="bg-[#f9ffc5] shadow-none ring-[#151802] p-5 h-full overflow-y-auto">
                 <DialogHeader>
