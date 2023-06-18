@@ -16,9 +16,12 @@ export default function Page() {
         </div>
         <div className="mb-8">
           <p className="font-inter text-lg max-w-2xl mx-auto">
-            We are a team of 2 people, who are passionate about building things
-            that people love. We are currently working on this project and we
-            are trying to make it better day by day.
+            I am the sole creator behind this app, working diligently to bring
+            you a high-quality product. I am passionate about what I do and
+            dedicated to improving the app day by day. Your support and feedback
+            are greatly appreciated as I continue to enhance and refine the user
+            experience. Stay tuned for updates and enjoy using the app. Thank
+            you for being a part of this journey.
           </p>
         </div>
       </div>

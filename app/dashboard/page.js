@@ -142,21 +142,19 @@ function Dashboard() {
 
     //check if url is empty
     if (url.url === "") {
-      toast({
+      return toast({
         title: "Error",
         description: "Please enter a url",
       });
-      return;
     }
 
     // valide the url
     if (!isValidURL(url.url)) {
-      console.log("invalid url");
+      return console.log("invalid url");
       toast({
         title: "Invalid url",
         description: "Please enter a valid url",
       });
-      return;
     }
 
     // save the url to the database and show a toast
@@ -180,17 +178,15 @@ function Dashboard() {
     if (ok) {
       setUrl({ ...url, url: "", name: "", linkName: "", expiration: "" });
       fetchData(session);
-      setUserUrls({ ...userUrls, loading: true });
-      toast({
+      return toast({
         title: "Success",
         description: message,
       });
     } else {
-      toast({
+      return toast({
         title: "Error",
         description: message,
       });
-      return;
     }
   };
 
