@@ -70,7 +70,8 @@ export default async function handler(req, res) {
     expiration = expiration;
   }
   const isLinkExist = await collection.findOne({
-    $or: [{ custom_link, user_id }],
+    //user and operation
+    $and: [{ userId: user_id }, { nanoId: custom_link }],
   });
 
   if (isLinkExist) {

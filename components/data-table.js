@@ -51,10 +51,10 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
     }
   };
   const handleCopy = (id) => () => {
-    navigator.clipboard.writeText(`https://shtr.vercel.app/${id}`);
+    navigator.clipboard.writeText(`https://shortner.cloud/${id}`);
     toast({
       title: "Copied to clipboard",
-      description: `https://shtr.vercel.app/${id} copied to clipboard`,
+      description: `https://shortner.cloud/${id} copied to clipboard`,
       status: "success",
       duration: 3000,
       isClosable: true,
@@ -66,7 +66,7 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
     const dataURL = canvas?.toDataURL("image/png");
     const link = document.createElement("a");
     link.href = dataURL;
-    link.download = `https://shtr.vercel.app/${nanoId}.png`;
+    link.download = `https://shortner.cloud/${nanoId}.png`;
     link.click();
     // delete the link just after the use so that it doesn't take up memory and resources when not needed
     link.remove();
@@ -83,12 +83,12 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
             <div className="space-y-1 w-full">
               <Link
                 target="_blank"
-                href={`https://shtr.vercel.app/${item.nanoId}`}
+                href={`https://shortner.cloud/${item.nanoId}`}
                 className="text-sm font-medium break-words max-w-md hover:underline"
               >
                 {item.name !== "untitled"
-                  ? `https://shtr.vercel.app/${item.nanoId} (${item.name})`
-                  : `https://shtr.vercel.app/${item.nanoId}`}
+                  ? `https://shortner.cloud/${item.nanoId} (${item.name})`
+                  : `https://shortner.cloud/${item.nanoId}`}
               </Link>
               <p className="w-full text-sm opacity-50 max-w-md break-words">
                 {item.url}
@@ -148,7 +148,7 @@ export function DataTable({ data, session, fetchData, setUserUrls, userUrls }) {
                       fgColor="#151802"
                       includeMargin={true}
                       className="h-full w-auto"
-                      value={`https://shtr.vercel.app/${item.nanoId}`}
+                      value={`https://shortner.cloud/${item.nanoId}`}
                     />
                   </DialogDescription>
                 </DialogHeader>

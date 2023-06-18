@@ -256,13 +256,11 @@ function Dashboard() {
                     />
                   </div>
                   <TailwindInput
-                    disabledField
                     label="Custom link (Optional)"
                     id="URLName"
-                    disabled
                     value={url.name}
                     onChange={(e) => setUrl({ ...url, name: e.target.value })}
-                    defaultValue="https://shtr.vercel.app/"
+                    defaultValue="https://shortner.cloud/"
                     placeholder="Enter a custom name for your link"
                   />
                   <TailwindInput
