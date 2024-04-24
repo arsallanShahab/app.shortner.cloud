@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚀 URL Shortener - Making Long URLs Short and Sweet! 🍭
 
-## Getting Started
+Welcome to our URL shortener! This isn't just any URL shortener, it's a **super-duper, high-flying, time-saving, and absolutely thrilling** URL shortener. We take your long, cumbersome URLs and transform them into short, sweet, and shareable links. And guess what? We have a separate service that whisks users away to the original URL when the shortened URL is accessed. Magic! 🎩🐇
 
-First, run the development server:
+## 🛠️ Built With Love and...
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [Next.js](https://nextjs.org/): The React framework that needs no introduction.
+- [MongoDB](https://www.mongodb.com/): Our trusty database sidekick.
+- [Tailwind CSS](https://tailwindcss.com/): For when we want to look our best.
+- [NextAuth.js](https://next-auth.js.org/): Keeping your secrets safe with us.
+- [nanoid](https://github.com/ai/nanoid): The tiny, secure, URL-friendly, unique string ID generator.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🎁 Features (or should we say, superpowers?)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **User Authentication**: Secret identities are safe with us.
+- **URL Shortening**: We take long URLs and make them short. Simple!
+- **Custom URLs**: Want to name your URL? Go ahead, we won't stop you.
+- **Expiration**: Because even URLs need to retire.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Ready for Liftoff?
 
-## Learn More
+1. Clone the repository.
+2. Install the dependencies with `npm install`.
+3. Start the development server with `npm run dev`.
 
-To learn more about Next.js, take a look at the following resources:
+Then, open [http://localhost:3000](http://localhost:3000) with your browser to see the magic happen.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌍 Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+To run this project, you will need to add the following environment variables to your .env file:
 
-## Deploy on Vercel
+- `MONGODB_URI`: Your MongoDB connection string.
+- `GOOGLE_CLIENT_ID`: Your Google OAuth client ID.
+- `GOOGLE_CLIENT_SECRET`: Your Google OAuth client secret.
+- `GITHUB_CLIENT_ID`: Your GitHub OAuth client ID.
+- `GITHUB_CLIENT_SECRET`: Your GitHub OAuth client secret.
+- `NEXTAUTH_SECRET`: A secret used to encrypt session data.
+- `NEXT_PUBLIC_APP_URL`: The public URL of your application.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can find these details in the `.env.sample` file in the root of the project.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 🎉 Thanks for stopping by!
+
+We hope you enjoy using our URL shortener as much as we enjoyed building it. Happy shortening!

@@ -1,14 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
-import {
-  Loader2,
-  Menu,
-  MenuIcon,
-  MenuSquare,
-  MoonIcon,
-  PanelTopOpen,
-  Sun,
-} from "lucide-react";
+import { Loader2, PanelTopOpen } from "lucide-react";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -57,7 +49,7 @@ const Navbar = () => {
           href={"/"}
           className="font-sora text-2xl font-bold tracking-tighter"
         >
-          shortner
+          LinkLeap
         </Link>
         <div className="hidden sm:flex gap-3 items-center justify-start">
           {/* check which is active */}
@@ -65,7 +57,7 @@ const Navbar = () => {
             { name: "home", path: "/" },
             { name: "features", path: "/features" },
             { name: "pricing", path: "/pricing" },
-            { name: "about", path: "/about" },
+            // { name: "about", path: "/about" },
           ].map((item, index) => {
             const isActive = pathname == item.path;
             if (pathname == "/dashboard") {

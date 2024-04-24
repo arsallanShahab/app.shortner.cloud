@@ -39,6 +39,8 @@ import { useSession } from "next-auth/react";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL;
+
 function Dashboard() {
   const { data: session, status } = useSession();
   const [userUrls, setUserUrls] = useState({
@@ -150,11 +152,11 @@ function Dashboard() {
 
     // valide the url
     if (!isValidURL(url.url)) {
-      return console.log("invalid url");
       toast({
         title: "Invalid url",
         description: "Please enter a valid url",
       });
+      return console.log("invalid url");
     }
 
     // save the url to the database and show a toast
@@ -256,7 +258,7 @@ function Dashboard() {
                     id="URLName"
                     value={url.name}
                     onChange={(e) => setUrl({ ...url, name: e.target.value })}
-                    defaultValue="https://shortner.cloud/"
+                    defaultValue={APP_URL}
                     placeholder="Enter a custom name for your link"
                   />
                   <TailwindInput

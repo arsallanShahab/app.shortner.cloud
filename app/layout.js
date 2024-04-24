@@ -11,7 +11,7 @@ export default function RootLayout({ children, session }) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <title>Shortner | shorten your links</title>
+        <title>LinkLeap | shorten your links</title>
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-6RYR6WVE2Z"

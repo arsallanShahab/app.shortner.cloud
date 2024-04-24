@@ -30,10 +30,13 @@ export default function Home() {
           <div className={cn("mb-4")}>
             <h1
               className={cn(
-                "text-7xl sm:text-8xl font-bold tracking-tighter break-all sm:break-keep"
+                "text-6xl sm:text-7xl font-bold tracking-tighter break-all sm:break-keep"
               )}
             >
-              <span className="color-effect">Shorten</span> your links
+              <span className="color-effect text-7xl sm:text-8xl">
+                LinkLeap{" "}
+              </span>
+              Shorten your links
             </h1>
           </div>
           <div className={cn("mb-8")}>
